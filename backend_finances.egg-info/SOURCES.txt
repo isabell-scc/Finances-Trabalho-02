@@ -1,0 +1,12 @@
+LICENSE
+setup.py
+backend_finances.egg-info/PKG-INFO
+backend_finances.egg-info/SOURCES.txt
+backend_finances.egg-info/dependency_links.txt
+backend_finances.egg-info/top_level.txt
+finances/__init__.py
+finances/main.py
+tests/test_account.py
+tests/test_client.py
+tests/test_investment.py
+tests/test_transaction.py
