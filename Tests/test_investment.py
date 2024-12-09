@@ -2,7 +2,6 @@
 from datetime import datetime, timedelta
 from finances import Investment, Account, Client
 
-
 def test_investment_initialization():
     """Teste de inicialização do investimento"""
     investimento = Investment("Ações", 1000.0, 0.05)
@@ -10,8 +9,12 @@ def test_investment_initialization():
     # Verificando se os atributos foram inicializados corretamente
     assert investimento.type == "Ações"
     assert investimento.initial_amount == 1000.0
-    assert isinstance(investimento.date_purchased, datetime)
     assert investimento.rate_of_return == 0.05
+    
+    assert isinstance(investimento.date_purchased, datetime)
+    assert isinstance(investimento.initial_amount, float)
+    assert isinstance(investimento.rate_of_return, float)
+    assert isinstance(investimento.type, str)
 
 def test_calculate_value():
     """Teste de cálculo do valor do investimento"""
