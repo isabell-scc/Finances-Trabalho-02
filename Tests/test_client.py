@@ -1,7 +1,5 @@
 from finances import Client, Account, Investment
-
 from  datetime import datetime, timedelta
-
 
 def test_inicializacao_cliente():
     """Teste de inicialização do objeto Client"""
