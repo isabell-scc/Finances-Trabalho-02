@@ -1,4 +1,4 @@
-from Modulo import Client, Account, Investment, generate_report, future_value_report
+from finances import Client, Account, Investment, generate_report, future_value_report
 from datetime import datetime, timedelta
 
 # Criando o cliente

@@ -1,19 +1,22 @@
-from Modulo  import Client, Account, Investment
+from finances import Client, Account, Investment
 
 from  datetime import datetime, timedelta
 
-# Teste de inicialização do objeto Client
+
 def test_inicializacao_cliente():
+    """Teste de inicialização do objeto Client"""
     cliente = Client(name="João")
 
     assert cliente.name == "João"
-    assert isinstance(cliente.accounts, list)
-    assert isinstance(cliente.investments, list)
     assert cliente.accounts == []
     assert cliente.investments == []
 
-# Teste de criação de uma nova conta
+    assert isinstance(cliente.name, str)
+    assert isinstance(cliente.accounts, list)
+    assert isinstance(cliente.investments, list)
+
 def test_adicionar_conta():
+    """Teste de criação de uma nova conta"""
     cliente = Client("Maria")
     conta = cliente.add_account("Conta Corrente")
 
@@ -21,8 +24,8 @@ def test_adicionar_conta():
     assert isinstance(conta, Account)
     assert conta.name == "Conta Corrente"
 
-# Teste de adicionar um investimento
 def test_adicionar_investimento():
+    """Teste de adicionar um investimento"""
     cliente = Client(name="Carlos")
     investimento = Investment("Ações",1000.0, 0.02)
     cliente.add_investment(investimento)
@@ -31,8 +34,8 @@ def test_adicionar_investimento():
     assert isinstance(cliente.investments[0], Investment)
     assert cliente.investments[0].type == "Ações"
 
-# Teste de cálculo do patrimônio líquido (net worth)
 def test_calcular_patrimonio_liquido():
+    """Teste de cálculo do patrimônio líquido"""
     cliente = Client(name="Ana")
 
     # Criando uma conta com saldo
@@ -49,8 +52,8 @@ def test_calcular_patrimonio_liquido():
 
     assert round(patrimonio, 2) == round(2000.0 + valor_investimento, 2)
 
-# Teste de atualização dos atributos
 def test_atualizacao_atributos():
+    """Teste de atualização dos atributos"""
     cliente = Client(name="Pedro")
     cliente.name = "Pedro Silva"
 

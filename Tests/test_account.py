@@ -1,5 +1,5 @@
 from datetime  import datetime, timedelta
-from Modulo import Account, Transaction, CATEGORIES
+from finances import Account, Transaction, CATEGORIES
 
 def test_account_initialization() -> None:
     account = Account(name="Conta Corrente")

@@ -1,0 +1,24 @@
+###Relação entre as classes 
+
+# TRANSACTION
+Representa uma trasação financeira, contendo informações sobre valores, categorias, datas e descrições da transação. Ela está associada com a classe Account, já que as transações são adicionadas a conta do cliente.
+
+
+# Account
+Representa uma conta bancária de um cliente, na qual tem um saldo e um extrato. A transações são criadas e adicionadas a conta usando o método add_transaction, além disso permite que o saldo seja atualizado sendo associada a classe Client, pois apenas um cliente pode ter mais de uma conta.
+
+
+# Investment
+Representa um investimento feito pelo o cliente, armazenando o tipo de investimento, o valor inicial e a taxa de retorno em juros compostos. Ela está associada a classe Client, obviamente.
+
+
+# Client
+Represente o cliente que pode ter contas e fazer investimentos e transações.
+
+
+*Classes com relação de agregação:*
+--> Client e Account(um cliente pode ter várias contas, mas as contas podem existir sem o cliente).
+--> Client e Investment(um cliente pode ter vários investimentos, mas os investimentos podem existir sem o cliente).
+
+*Classes com relação de composição*
+--> Account e Transaction(as transações só existem dentro do contexto de uma conta, e são destruídas quando a conta é destruída).

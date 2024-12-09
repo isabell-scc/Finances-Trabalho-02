@@ -198,20 +198,16 @@ def generate_report(client: Client) -> dict:
 
 
 def future_value_report(client: Client, future_date: datetime) -> str:
-    # Calculando os meses até a data futura
     months_ahead = (future_date - datetime.now()).days // 30
     
     # Iniciando o relatório
     report = [f"Projeção de Rendimentos para {client.name} até {future_date.strftime('%d/%m/%Y')}\n"]
     
-    # Projeção de investimentos futuros
     report.append("Investimentos Futuros:")
     for investment in client.investments:
-        # Usando o valor inicial do investimento para calcular o valor futuro
         future_value = investment.initial_amount * ((1 + investment.rate_of_return) ** months_ahead)
         report.append(f"- {investment.type}: Valor Projetado R$ {future_value:,.2f}")
     
-    # Relatório de contas
     report.append("\nContas:")
     for account in client.accounts:
         report.append(f"- {account.name}: Saldo Atual R$ {account.balance:,.2f}")

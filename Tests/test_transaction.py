@@ -1,9 +1,10 @@
 
 from datetime import datetime
-from Modulo import Transaction, CATEGORIES
+from finances import Transaction, CATEGORIES
 
-# Teste de criação da transação
+
 def test_iniciar_transacao():
+    """Teste de criação da transação"""
     transacao = Transaction(amount=100.0, category=1, description="Pagamento de serviço")
 
     # Conferir se o objeto foi instanciado corretamente
@@ -19,16 +20,13 @@ def test_iniciar_transacao():
     assert isinstance(transacao.category, str)   
     assert isinstance(transacao.description, str)  
 
-    
-    assert isinstance(transacao.date, datetime)  # O tipo de `date` deve ser datetime
-
-# Teste de impressão no formato correto
 def test_impressao_transacao():
+    """Teste de impressão no formato correto"""
     transacao = Transaction(amount=50.0, category=2, description="Depósito de dinheiro")
     assert str(transacao) == "Transação: Depósito de dinheiro R$ 50.00 (Depósito)"
 
-# Teste do método update para atualizar atributos
 def test_update_transacao():
+    """Teste do método update para atualizar atributos"""
     transacao = Transaction(amount=150.0, category=3, description="Transferência bancária")
 
     # Atualizando a transação

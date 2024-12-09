@@ -1,8 +1,10 @@
 
 from datetime import datetime, timedelta
-from Modulo import Investment, Account, Client
-# Teste de inicialização do investimento
+from finances import Investment, Account, Client
+
+
 def test_investment_initialization():
+    """Teste de inicialização do investimento"""
     investimento = Investment("Ações", 1000.0, 0.05)
 
     # Verificando se os atributos foram inicializados corretamente
@@ -11,8 +13,8 @@ def test_investment_initialization():
     assert isinstance(investimento.date_purchased, datetime)
     assert investimento.rate_of_return == 0.05
 
-# Teste de cálculo do valor do investimento
 def test_calculate_value():
+    """Teste de cálculo do valor do investimento"""
     investimento = Investment(2, 1000.0, 0.05)
 
     # Simulando 6 meses passados
@@ -26,6 +28,7 @@ def test_calculate_value():
 
 
 def test_investment_sell():
+    """Teste de cálculo do valor do investimento após a venda"""
     cliente = Client("João")
     conta = cliente.add_account("Conta Teste")
     investimento = Investment("Ações", 1000.0, 0.05)
