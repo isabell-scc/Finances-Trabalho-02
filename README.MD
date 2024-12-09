@@ -3,6 +3,7 @@
 ##Feito por: Isabel Santos e Maria Rita
 
 Responsável por implementar as classes: Isabel
+
 Responsável por implementar os testes: Maria Rita
 
 Projeto do curso de programação orientada a objetos. O Pacote possui como objetivo desenvolver um aplicativo de finanças pessoais que ajude os usuários a gerenciar suas receitas, despesas e investimentos. Além disso, ele fornece recurso para o rastreamento e categorização de transações, bem como ferramentas para a ánalise financeira, como relátorios e projeções..
